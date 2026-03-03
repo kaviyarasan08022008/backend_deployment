@@ -8,6 +8,10 @@ from datetime import date
 from typing import Optional
 import cloudinary
 import cloudinary.uploader
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 router = APIRouter(
     prefix="/complaints",
@@ -16,9 +20,9 @@ router = APIRouter(
 
 # Configure Cloudinary
 cloudinary.config( 
-  cloud_name = "dp00xc9em", 
-  api_key = "164498659984681", 
-  api_secret = "hSMJsznqXlu1QurJKoLYKG2PpAE" 
+  cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'), 
+  api_key = os.getenv('CLOUDINARY_API_KEY'), 
+  api_secret = os.getenv('CLOUDINARY_API_SECRET') 
 )
 
 @router.post("/", status_code=201, response_model=ComplaintResponse)
