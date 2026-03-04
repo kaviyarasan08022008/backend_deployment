@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Form, File, UploadFile
 from sqlalchemy.orm import Session
-from dependencies import connect_to_db
-from models.complaints import Complaints
-from models.actions import Actions
-from schemas.complaints import ComplaintResponse
+from api.dependencies import connect_to_db
+from api.models.complaints import Complaints
+from api.models.actions import Actions
+from api.schemas.complaints import ComplaintResponse
 from datetime import date
 from typing import Optional
 import cloudinary

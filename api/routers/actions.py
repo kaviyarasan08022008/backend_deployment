@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from dependencies import connect_to_db
-from models.actions import Actions
-from schemas.actions import ActionCreate, ActionResponse
+from api.dependencies import connect_to_db
+from api.models.actions import Actions
+from api.schemas.actions import ActionCreate, ActionResponse
 
 router = APIRouter(
     prefix="/actions",
