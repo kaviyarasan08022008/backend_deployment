@@ -11,7 +11,7 @@ router = APIRouter(
     tags=["users"]
 )
 
-@router.post("/")
+@router.post("")
 def create_user(user: UserBase, db: Session = Depends(connect_to_db)):
     try:
         new_user = User(
@@ -78,7 +78,7 @@ def delete_user(user_id: int, db: Session = Depends(connect_to_db)):
 
     return {"detail": "User deleted successfully"}
 
-@router.post("/login/")
+@router.post("/login")
 def login(user_details: UserLogin, db: Session = Depends(connect_to_db)):
     user = db.query(User).filter(
         User.user_name == user_details.user_name,

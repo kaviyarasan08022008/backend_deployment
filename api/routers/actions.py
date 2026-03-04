@@ -8,12 +8,12 @@ router = APIRouter(
     prefix="/actions",
     tags=["Actions"]
 )
-@router.get("/")
+@router.get("")
 def get_all_actions(dbs: Session = Depends(connect_to_db)):
     return dbs.query(Actions).all()
 
 
-@router.post("/", response_model=ActionResponse)
+@router.post("", response_model=ActionResponse)
 def create_action(
     action: ActionCreate,
     db: Session = Depends(connect_to_db)

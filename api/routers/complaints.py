@@ -25,7 +25,7 @@ cloudinary.config(
   api_secret = os.getenv('CLOUDINARY_API_SECRET') 
 )
 
-@router.post("/", status_code=201, response_model=ComplaintResponse)
+@router.post("", status_code=201, response_model=ComplaintResponse)
 def create_complaint(
     people_id: int = Form(...),
     category: str = Form(...),
@@ -77,7 +77,7 @@ def create_complaint(
     return new_complaint
 
 
-@router.get("/", response_model=list[ComplaintResponse])
+@router.get("", response_model=list[ComplaintResponse])
 def get_all_complaints(db: Session = Depends(connect_to_db)):
     return db.query(Complaints).all()
 
