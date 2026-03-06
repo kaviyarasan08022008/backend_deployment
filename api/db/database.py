@@ -5,12 +5,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:AcademyRootPassword@localhost:5432/village_voice_api")
-
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"sslmode": "require"}
-)
+engine = create_engine(os.getenv("DATABASE_URL"))
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
