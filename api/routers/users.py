@@ -70,7 +70,6 @@ def delete_user(user_id: int, db: Session = Depends(connect_to_db)):
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
-    # delete related actions first
     db.query(Actions).filter(Actions.collector_id == user_id).delete()
 
     db.delete(user)

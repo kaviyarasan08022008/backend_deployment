@@ -146,7 +146,7 @@ def delete_complaint(complaint_id: int, db: Session = Depends(connect_to_db)):
 
     return {"message": "Complaint deleted successfully"}
 
-@router.patch("/{complaint_id}/status", response_model=ComplaintResponse)
+@router.put("/{complaint_id}/status", response_model=ComplaintResponse)
 def update_complaint_status(
     complaint_id: int,
     status: str = Form(...),

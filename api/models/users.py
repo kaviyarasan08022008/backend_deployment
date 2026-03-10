@@ -14,5 +14,4 @@ class User(Base):
     state = Column(String)
     district = Column(String)
     village_town = Column(String)
-
-    user_role = Column(String)  # admin / collector / user
+    user_role = Column(String)  # collector / user
