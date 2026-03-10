@@ -1,10 +1,9 @@
-bcrypt
-cloudinary
 fastapi
-python-dotenv
+uvicorn
 python-multipart
 SQLAlchemy
 pydantic
-uvicorn
+python-dotenv
 psycopg2-binary
-requests
+cloudinary
+bcrypt
