@@ -1,11 +1,15 @@
 from fastapi import FastAPI, Form, File, UploadFile
 from api.routers import users, complaints, actions
+from api.db.database import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 import cloudinary
 import cloudinary.uploader
 import shutil
 import uuid
 from datetime import date
+
+# Create tables in the database if they don't exist
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
