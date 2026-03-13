@@ -161,6 +161,6 @@ def update_complaint_status(
     db.refresh(complaint)
     return complaint
 
-@router.get("/user/{people_id}", response_model=list[ComplaintResponse])
-def get_user_complaints(people_id: int, db: Session = Depends(connect_to_db)):
-    return db.query(Complaints).filter(Complaints.people_id == people_id).all()
+# @router.get("/user/{people_id}", response_model=list[ComplaintResponse])
+# def get_user_complaints(people_id: int, db: Session = Depends(connect_to_db)):
+#     return db.query(Complaints).filter(Complaints.people_id == people_id).all()
