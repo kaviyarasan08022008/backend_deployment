@@ -23,7 +23,8 @@ def create_user(user: UserBase, db: Session = Depends(connect_to_db)):
             state=user.state,
             district=user.district,
             village_town=user.village_town,
-            user_role=user.user_role
+            user_role=user.user_role,
+            phone_number=user.phone_number
         )
         db.add(new_user)
         db.commit()

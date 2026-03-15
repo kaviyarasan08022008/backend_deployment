@@ -9,7 +9,8 @@ class UserBase(BaseModel):
     password: str
     district: str
     village_town: str | None = None
-    user_role: str   # admin / collector / user
+    user_role: str
+    phone_number:  str   # admin / collector / user
 
 class UserCreate(BaseModel):
     state: str
